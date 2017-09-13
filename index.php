@@ -1,21 +1,13 @@
-<html>
-<header></header>
-<body>
-
+<html><header></header><body>
+<form name="countArray" action="" method="post">
+    <input name="num" type="number" >
+    <input type="submit" name="run" value="sub">
+</form>
 <?php
-$l=4;
-$i=0;
-$array = array(433,5465,43534,3424,465,4645,2342);
-echo "<table border='1'>";
-echo "<tr>";
-while($i <=$l){
-    echo"<td>";
-    echo "$array[$i]";
-    echo "</td>";
-    $i++;
-}
-echo "</tr>";
-echo "</table>";
+$l=$_POST["num"];
+$array = array();
+print "<table border='1'><tr>";
+for($i=0; $i<$l; $i++){print"<td>";$array[$i]=rand(1,9999);print"$array[$i]";print"</td>";}
+print"</tr></table>";
 ?>
-</body>
-</html>
+</body></html>
