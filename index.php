@@ -6,8 +6,8 @@
 <?php
 $l=$_POST["num"];
 $array = array();
-print "<table border='1'><tr>";
-for($i=0; $i<$l; $i++){print"<td>";$array[$i]=rand(1,9999);print"$array[$i]";print"</td>";}
-print"</tr></table>";
+echo "<table border='1'><tr>";
+for($i=0; $i<$l; $i++){echo"<td>";$array[$i]=rand(1,9999);echo"$array[$i]";echo"</td>";}
+echo"</tr></table>";
 ?>
 </body></html>
