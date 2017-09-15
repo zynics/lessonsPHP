@@ -8,15 +8,18 @@
 
 $l = $_POST["num"];
 $l2 = $_POST["num2"];
+//$l = 3;
+//$l2 = 3;
 $array = [];
 echo ">";
 for($i = 0; $i<$l; $i++){
 
-        for($i2 = 0; $i2 < $l2; $i2++){
-
-            $array[$i][$i2] = rand(1,9999);
-              }
-
+        for($i2 = 0; $i2 < $l2; $i2++) {
+            if ($i == $i2)
+                $array[$i][$i2] = 1;
+            else
+                $array[$i][$i2] = 0;
+        }
 }
 echo "</table>";
 var_dump($array);
