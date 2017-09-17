@@ -5,6 +5,7 @@
     <input type="submit" name="run" value="sub">
 </form>
 <?php
+echo "123";
 $l=$_POST["num"];
 $l2=$_POST["num2"];
 $array = [];
@@ -17,10 +18,10 @@ for($i = 0; $i < $l; $i++){
 <html>
 <table border='1'>
     <tr>
-        <?php foreach (&array as &str)?>
+
         <td>
-            <?php foreach (&str as &data)?>
-            <?php echo ?>
+
+
         </td>
     </tr>
 </table>
