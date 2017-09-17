@@ -1,54 +1,39 @@
 
-<form name="countArray" action="" method="post">
-    <input name="num" type="number" >
-    <input name="num2" type="number" >
-    <input type="submit" name="run" value="sub">
+<form name="countArray" action="" method="post" >
+    <input name="num" type="number" value="<?= $_POST["num"];?>" >
+    <input name="num2" type="number" value="<?= $_POST["num2"];?>"  >
+    <input name="line" type="radio" value="0" checked>
+    <input name="line" type="radio" value="1">
+    <input type="submit" name="run" value="sub"><td>
 </form>
 <?php
-<<<<<<< HEAD
-echo "123";
-$l=$_POST["num"];
-$l2=$_POST["num2"];
+
+$l = $_POST["num"];
+$l2 = $_POST["num2"];
+$line = $_POST["line"];
+//$l = 3;
+//$l2 = 5;
+$c = $l2-1;
 $array = [];
+
+
 for($i = 0; $i < $l; $i++){
-           for($j = 0; $j < $l2; $j++){
-             $array[$i][$j]=rand(1,9999);
-          }
-}
-?>
-<html>
-<table border='1'>
-    <tr>
-
-        <td>
-
-
-        </td>
-    </tr>
-</table>
-</html>
-=======
-
-//$l = $_POST["num"];
-//$l2 = $_POST["num2"];
-$l = 3;
-$l2 = 5;
-
-$array = [];
-echo ">";
-for($i = 0; $i<$l; $i++){
 
         for($i2 = 0; $i2 < $l2; $i2++) {
-            //if ($i == $i2)
-            //    $array[$i][$i2] = 1;
-            //else
-            //   $array[$i][$i2] = 0;
-
-            if ($i2== $l2)
-                $array[$i][$i2] = 1;
-            else
-                $array[$i][$i2] = 0;
-
+            if ($line == 0) {
+                if ($i == $i2)
+                    $array[$i][$i2] = 1;
+                else
+                    $array[$i][$i2] = 0;
+            }
+            else {
+                if ($i2 == $c) {
+                    $array[$i][$i2] = 1;
+                    $c--;
+                } else {
+                    $array[$i][$i2] = 0;
+                }
+            }
         }
 }
 echo "</table>";
@@ -66,4 +51,3 @@ var_dump($array);
         </tr>
     <?php endforeach; ?>
 </table>
->>>>>>> 9da3cacd12da678a71dbe1612c4f2048d613ee92
