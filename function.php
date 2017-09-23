@@ -1,30 +1,38 @@
 <?php
-$l = $_POST["num"];
-$l2 = $_POST["num2"];
+//$height = $_POST["num"];
+//$width = $_POST["num2"];
 $line = $_POST["line"];
-//$l = 3;
-//$l2 = 5;
-$c = $l2-1;
+$line = 0;
+$height = 3;
+$width  = 5;
+$c = $width -1;
 $array = [];
 
-functi
-for($i = 0; $i < $l; $i++){
+if ($line == 0)
+        matrixLeftToRight (3,4);
+    else
+        matrixRightToLeft ($height, $width);
 
-    for( $i2 = 0; $i2 < $l2; $i2++ ) {
-        if ( $line == 0 ) {
-            if ( $i == $i2 )
-                $array[$i][$i2] = 1;
+
+function matrixLeftToRight($height, $width)
+{
+    for ($i = 0; $i < $height; $i++) {
+        for ($j = 0; $j < $width; $j++) {
+            if ($i == $j)
+                $array[$i][$j] = 1;
             else
-                $array[$i][$i2] = 0;
-        }
-        else {
-            if ( $i2 == $c)  {
-                $array[$i][$i2] = 1;
-                $c--;
-            } else {
-                $array[$i][$i2] = 0;
-            }
+                $array[$i][$j] = 0;
         }
     }
+    return $array;
 }
+
+//function matrixRightToLeft () {
+//        if ( $width  == $c)  {
+//            $array[$i][$width ] = 1;
+//            $c--;
+//        else
+//            $array[$i][$width ] = 0;
+//        }
+//}
 ?>
