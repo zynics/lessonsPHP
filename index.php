@@ -1,38 +1,18 @@
-<!--<form name="countArray" action="" method="post">-->
-<!--    <input name="num" type="number" value="--><?//= $_POST["num"]; ?><!--">-->
-<!--    <input name="num2" type="number" value="--><?//= $_POST["num2"]; ?><!--">-->
-<!--    <input name="line" type="radio" value="0" checked>-->
-<!--    <input name="line" type="radio" value="1">-->
-<!--    <input type="submit" name="run" value="sub">-->
-<!--</form>-->
+<?php require_once "header.php"; ?>
+<?php require_once "function.php"; ?>
+<?php require_once "result.php"; ?>
 
-<?php
-$height = 3;
-$width = 3;
-line(3,3);
-function line($height, $width)
-{
-    for ($i = 0; $i < $height; $i++) {
-        for ($j = 0; $j < $width; $j++) {
-            if ($i == $j)
-                $array[$i][$j] = 1;
-            else
-                $array[$i][$j] = 0;
-        }
-    }
-    return $array;
-}
+    <form name="countArray" action="" method="post">
+        <label>Высота массива</label><br/>
+        <input name="height" type="number" value="<?= $_POST["height"]; ?>"><br/>
+        <label>Ширина массива</label><br/>
+        <input name="width" type="number" value="<?= $_POST["width"]; ?>"><br/>
+        <label>Слево на право</label>
+        <!--   <input name="derectline" type="radio" value="0" <? /* $_POST["derectline"] == 0 ? echo "checked"; */ ?> ><br/>-->
+        <input name="derectline" type="radio" value="0" checked><br/>
+        <label>Право на лево</label>
+        <input name="derectline" type="radio" value="1"><br/>
+        <input type="submit" name="run" value="sub">
+    </form>
 
-?>
-
-<table border='1'>
-    <?php foreach ($array as $key => $row): ?>
-        <tr>
-            <?php foreach ($row as $item): ?>
-                <td>
-                    <?= $item; ?>
-                </td>
-            <?php endforeach; ?>
-        </tr>
-    <?php endforeach; ?>
-</table>
+<?php require_once "footer.php"; ?>

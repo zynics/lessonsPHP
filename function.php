@@ -1,20 +1,12 @@
 <?php
-//$height = $_POST["num"];
-//$width = $_POST["num2"];
-$line = $_POST["line"];
-$line = 0;
-$height = 3;
-$width  = 5;
-$c = $width -1;
-$array = [];
 
-if ($line == 0)
-        matrixLeftToRight (3,4);
-    else
-        matrixRightToLeft ($height, $width);
+$height = $_POST["height"];
+$width = $_POST["width"];
+$derectline = $_POST["derectline"];
 
+$array = $derectline == 0 ? LeftToRight($height, $width) : RightToLeft($height, $width);
 
-function matrixLeftToRight($height, $width)
+function LeftToRight($height, $width)
 {
     for ($i = 0; $i < $height; $i++) {
         for ($j = 0; $j < $width; $j++) {
@@ -27,12 +19,20 @@ function matrixLeftToRight($height, $width)
     return $array;
 }
 
-//function matrixRightToLeft () {
-//        if ( $width  == $c)  {
-//            $array[$i][$width ] = 1;
-//            $c--;
-//        else
-//            $array[$i][$width ] = 0;
-//        }
-//}
+function RightToLeft($height, $width)
+{
+    $c = $width - 1;
+    for ($i = 0; $i < $height; $i++) {
+        for ($j = 0; $j < $width; $j++) {
+            if ($j == $c) {
+                $array[$i][$j] = 1;
+                $c--;
+            } else
+                $array[$i][$j] = 0;
+        }
+    }
+    return $array;
+}
+
 ?>
+
