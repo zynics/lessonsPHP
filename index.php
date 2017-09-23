@@ -9,8 +9,9 @@
 <?php
 $height = 3;
 $width = 3;
-
-
+line(3,3);
+function line($height, $width)
+{
     for ($i = 0; $i < $height; $i++) {
         for ($j = 0; $j < $width; $j++) {
             if ($i == $j)
@@ -19,12 +20,11 @@ $width = 3;
                 $array[$i][$j] = 0;
         }
     }
-
+    return $array;
+}
 
 ?>
 
-
-func
 <table border='1'>
     <?php foreach ($array as $key => $row): ?>
         <tr>
