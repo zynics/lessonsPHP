@@ -1,13 +1,10 @@
 <?php
 
-$height = $_POST["height"];
-$width = $_POST["width"];
-$derectline = $_POST["derectline"];
 
-$array = $derectline == 0 ? LeftToRight($height, $width) : RightToLeft($height, $width);
 
 function LeftToRight($height, $width)
 {
+    $array=[];
     for ($i = 0; $i < $height; $i++) {
         for ($j = 0; $j < $width; $j++) {
             if ($i == $j)
@@ -21,6 +18,7 @@ function LeftToRight($height, $width)
 
 function RightToLeft($height, $width)
 {
+    $array=[];
     $c = $width - 1;
     for ($i = 0; $i < $height; $i++) {
         for ($j = 0; $j < $width; $j++) {

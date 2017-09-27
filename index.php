@@ -14,5 +14,11 @@
         <input name="derectline" type="radio" value="1"><br/>
         <input type="submit" name="run" value="sub">
     </form>
+<?php
+$height = $_POST["height"];
+$width = $_POST["width"];
+$derectline = $_POST["derectline"];
 
+$array = $derectline == 0 ? LeftToRight($height, $width) : RightToLeft($height, $width);
+?>
 <?php require_once "footer.php"; ?>
